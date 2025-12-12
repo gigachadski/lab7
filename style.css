@@ -1,0 +1,273 @@
+/* === ЗАГАЛЬНІ СТИЛІ СТОРІНКИ === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+      "header header block2"
+      "block3 block4 block2"
+      "block3 block5 block2"
+      "footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 5px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: orange;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 50px;
+    height: auto; /* Виправлено пропорції */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.block1 {
+    background: #9fc5e8;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.block2 {
+    grid-area: block2;
+    background: #c0e6b2;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.block3 {
+    grid-area: block3;
+    background: #fce5cd;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-y: auto; /* Прокрутка для довгої таблиці логів */
+    max-height: 600px;
+    font-size: 12px;
+}
+
+.block4 {
+    grid-area: block4;
+    background: #f9cb9c;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* БЛОК 5 - Основна робоча область */
+.block5 {
+    grid-area: block5;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    position: relative; /* ВАЖЛИВО: для позиціювання #work */
+    min-height: 400px;
+}
+
+footer {
+    grid-area: footer;
+    background: black;
+    color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+
+/* === СТИЛІ ДЛЯ КАРУСЕЛІ (з Лаб 5) === */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.nav-btn:hover { background-color: rgba(0,0,0,0.8); }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* === НОВІ СТИЛІ ДЛЯ ЛАБ 6 (ВАРІАНТ 11 - АНІМАЦІЯ) === */
+
+/* Робоче поле, що перекриває блок 5 */
+#work {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* Верхня панель з кнопками */
+#controls {
+    height: 50px;
+    background: #ddd;
+    border-bottom: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+/* Область анімації */
+#anim {
+    flex-grow: 1; /* Займає всю решту висоти */
+    margin: 0 5px 0 5px; /* Відступи по 5px з боків (Wmax-10px) */
+    border: 5px solid orange; /* Умова: оранжева рамка 5px */
+    position: relative;
+    overflow: hidden; /* Щоб круг зникав при вильоті */
+    
+    /* Текстура фону 32x32 */
+    background-image: url('texture.png'); 
+    background-size: 32px 32px;
+    background-repeat: repeat;
+    background-color: #fff; /* Колір, якщо текстури немає */
+}
+
+/* Зелений круг */
+#ball {
+    width: 30px; /* Радіус 15px -> Діаметр 30px */
+    height: 30px;
+    background: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%); /* Центрування */
+}
+
+/* Стилізація кнопок */
+.btn-main { 
+    padding: 10px 20px; font-size: 16px; 
+    background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px;
+}
+.btn-ctrl { 
+    padding: 5px 15px; cursor: pointer; margin-right: 5px; 
+    border: 1px solid #999; background: #eee; border-radius: 3px;
+}
+.btn-stop { background: #d9534f; color: white; border: none; }
+.btn-reload { background: #f0ad4e; color: black; border: none; }
+
+/* Повідомлення статусу */
+#msg-box {
+    font-size: 11px; margin-left: 10px; color: #333; font-weight: bold;
+}
+
+/* Таблиця логів (Блок 3) */
+table.log-table {
+    width: 100%; border-collapse: collapse; margin-top: 5px; background: white;
+}
+table.log-table th, table.log-table td {
+    border: 1px solid #ccc; padding: 4px; text-align: left;
+}
+table.log-table th { background: #eee; }
