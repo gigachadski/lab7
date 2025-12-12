@@ -1,4 +1,3 @@
-/* === ЗАГАЛЬНІ СТИЛІ СТОРІНКИ === */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -35,7 +34,7 @@ header {
 
 .logo {
     width: 50px;
-    height: auto; /* Виправлено пропорції */
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +92,7 @@ header {
     padding: 10px;
     box-sizing: border-box;
     word-wrap: break-word;
-    overflow-y: auto; /* Прокрутка для довгої таблиці логів */
+    overflow-y: auto; 
     max-height: 600px;
     font-size: 12px;
 }
@@ -109,8 +108,6 @@ header {
     align-items: center;
     justify-content: center;
 }
-
-/* БЛОК 5 - Основна робоча область */
 .block5 {
     grid-area: block5;
     background: #fff;
@@ -119,7 +116,7 @@ header {
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-wrap: anywhere;
-    position: relative; /* ВАЖЛИВО: для позиціювання #work */
+    position: relative; 
     min-height: 400px;
 }
 
@@ -136,7 +133,6 @@ footer {
     word-wrap: break-word;
 }
 
-/* === СТИЛІ ДЛЯ КАРУСЕЛІ (з Лаб 5) === */
 .carousel {
     position: relative;
     width: 100%;
@@ -194,9 +190,6 @@ footer {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* === НОВІ СТИЛІ ДЛЯ ЛАБ 6 (ВАРІАНТ 11 - АНІМАЦІЯ) === */
-
-/* Робоче поле, що перекриває блок 5 */
 #work {
     width: 100%;
     height: 100%;
@@ -209,7 +202,7 @@ footer {
     box-sizing: border-box;
 }
 
-/* Верхня панель з кнопками */
+
 #controls {
     height: 50px;
     background: #ddd;
@@ -220,33 +213,30 @@ footer {
     padding: 0 10px;
 }
 
-/* Область анімації */
+
 #anim {
-    flex-grow: 1; /* Займає всю решту висоти */
-    margin: 0 5px 0 5px; /* Відступи по 5px з боків (Wmax-10px) */
-    border: 5px solid orange; /* Умова: оранжева рамка 5px */
+    flex-grow: 1; 
+    margin: 0 5px 0 5px; 
+    border: 5px solid orange; 
     position: relative;
-    overflow: hidden; /* Щоб круг зникав при вильоті */
-    
-    /* Текстура фону 32x32 */
+    overflow: hidden; 
     background-image: url('texture.png'); 
     background-size: 32px 32px;
     background-repeat: repeat;
-    background-color: #fff; /* Колір, якщо текстури немає */
+    background-color: #fff; 
 }
 
-/* Зелений круг */
 #ball {
-    width: 30px; /* Радіус 15px -> Діаметр 30px */
+    width: 30px; 
     height: 30px;
     background: green;
     border-radius: 50%;
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%); /* Центрування */
+    transform: translate(-50%, -50%);
 }
 
-/* Стилізація кнопок */
+
 .btn-main { 
     padding: 10px 20px; font-size: 16px; 
     background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px;
@@ -258,16 +248,17 @@ footer {
 .btn-stop { background: #d9534f; color: white; border: none; }
 .btn-reload { background: #f0ad4e; color: black; border: none; }
 
-/* Повідомлення статусу */
+
 #msg-box {
     font-size: 11px; margin-left: 10px; color: #333; font-weight: bold;
 }
 
-/* Таблиця логів (Блок 3) */
+
 table.log-table {
     width: 100%; border-collapse: collapse; margin-top: 5px; background: white;
 }
 table.log-table th, table.log-table td {
     border: 1px solid #ccc; padding: 4px; text-align: left;
 }
+
 table.log-table th { background: #eee; }
